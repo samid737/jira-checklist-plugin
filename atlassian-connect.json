@@ -1,0 +1,37 @@
+{
+    "key": "todolist",
+    "name": "Jira todo plugin",
+    "description": "Simple todo list plugin",
+    "vendor": {
+        "name": "samid737",
+        "url": "https://www.github.com/samid737"
+    },
+    "baseUrl": "{{localBaseUrl}}",
+    "links": {
+        "self": "{{localBaseUrl}}/atlassian-connect.json",
+        "homepage": "{{localBaseUrl}}/atlassian-connect.json"
+    },
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed"
+    },
+    "scopes": [
+        "READ",
+        "WRITE"
+    ],
+    "modules": {
+        "webPanels": [
+            {
+                "key": "todolist",
+                "location": "atl.jira.view.issue.left.context",
+                
+                "name": {
+                    "value": "Checklists"
+                },
+                "url": "/todolist?issueKey={issue.key}",
+                "weight":141
+            }]
+    }
+}

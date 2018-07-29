@@ -1,0 +1,13 @@
+.iml
+
+.idea
+
+.DS_Store
+
+node_modules
+
+.pem
+
+credentials.json
+ngrok.exe
+node_modules/

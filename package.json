@@ -1,0 +1,24 @@
+{
+  "name": "todolist",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "atlassian-connect-express": "^3.0.2",
+    "body-parser": "^1.14.2",
+    "compression": "^1.6.0",
+    "cookie-parser": "^1.4.0",
+    "errorhandler": "^1.4.2",
+    "express": "^4.13.3",
+    "express-hbs": "*",
+    "morgan": "^1.6.1",
+    "sequelize": "^4.38.0",
+    "sqlite3": "^4.0.2",
+    "static-expiry": ">=0.0.5"
+  },
+  "devDependencies": {
+    "ngrok": "^2.3.0"
+  }
+}

@@ -1,0 +1,26 @@
+/* add-on styles */
+.ac-content {
+  background-color: white
+}
+.main-panel .aui-page-panel-item {
+  padding: 40px 40px 20px 0;
+  height: 100px;
+}
+
+.remove {
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.description  {
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.text {
+  right: 0;
+  top: 0;
+  padding: 24px 100px 0px 0px; 
+}
