@@ -4,7 +4,7 @@ Plain and simple check/todo list plugin using [atlassian-connect-express](https:
 
 Preview:
 
-![Demo](https://giphy.com/gifs/Zv8NMNSxRrgS5zJ7qj/html5)
+![Demo](https://gph.is/2mSPbS6)
 
 ## Usage
 
