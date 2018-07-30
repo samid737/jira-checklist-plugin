@@ -9,5 +9,6 @@
 credentials.json
 ngrok.exe
 node_modules/
+prints/
 
 store.db
