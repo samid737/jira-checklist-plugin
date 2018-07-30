@@ -16,17 +16,17 @@ Preview:
 ``` npm install --save-dev ngrok@2 ```
 * a valid credentials.json file for auto (de)registration as found [here](https://bitbucket.org/atlassian/atlassian-connect-express-template/src/master/credentials.json.sample).
 
-install dependencies:
+* install dependencies:
 
 ``` npm install ```
 
- to register and test the add-on :
+* to register and test the add-on :
 
 ``` npm start ```
 
 This will install your plugin ready for use.
 
-Now browse your issues and TODO everything you can imagine.
+* Flood fill your issues with TODOs.
 
 ## Dev notes
 
