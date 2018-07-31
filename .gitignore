@@ -11,3 +11,5 @@ node_modules
 credentials.json
 ngrok.exe
 node_modules/
+
+store.db
