@@ -21,7 +21,6 @@ module.exports = function (app, addon) {
     app.get('/todolist', addon.authenticate(), function (req, res) {
             // Rendering a template is e    asy; the `render()` method takes two params: name of template
             // and a json object to pass the context in
-            //console.log(req)
 
             res.render('todolist', {
                 issueKey: req.query['issueKey']
@@ -30,8 +29,6 @@ module.exports = function (app, addon) {
     );
 
     // Add any additional route handlers you need for views or REST resources here...
-
-
     // load any additional files you have in routes and apply those to the app
     {
         var fs = require('fs');

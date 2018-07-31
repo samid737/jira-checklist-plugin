@@ -2,10 +2,6 @@
 // Addon functionality
 
 //setup input events
-$(function () {
-    list.init();
-});
-
 var list = {
     init: function () {
         $("#description-input").on('keyup', function (e) {
@@ -27,63 +23,48 @@ var list = {
         list.refresh();
     },
     get: {
-        //strip d3 later on
-        data: function () {
-            var data = {};
+        //fetch data properties
+        todo: function () {
+            var todo = {};
 
             $("li").each(function (e, f) {
                 var chk = f.children[0].checked;
                 var txt = f.children[1].innerHTML;
-                data[txt] = chk;
+                todo[txt] = chk;
             });
 
-            console.log(data)
-            console.log(JSON.stringify(data));
-            return  data;
+            return { todos: todo };
         },
         issue: function () {
             return $('#todos-issue-key').val();
         }
     },
     add: function () {
+        var data = list.get.todo();
+
         var entry = $('#description-input').val();
         $('#description-input').val("");
 
-        var data = list.get.data();
-        var newData = { todos: data };
-        data[entry] = false;
-        console.log(data);
-        //newData.todos.push(entry); 
-        newData = JSON.stringify(newData);
+        data.todos[entry] = false;
 
-        api.request(newData, list.refresh, api.err);
+        api.request(data, list.refresh, api.err);
     },
     remove: function (todo) {
+        var data = list.get.todo();
 
-        var data = list.get.data();
-        var newData = { todos: data };
-        delete newData.todos[todo];
-        console.log(newData);
+        delete data.todos[todo];
 
-        newData = JSON.stringify(newData);
-
-        api.request(newData, list.refresh, api.err);
-    },
-    clear: function () {
-        //TODO: add clear function
+        api.request(data, list.refresh, api.err);
     },
     update: function () {
-        var data = list.get.data();
-        var newData = { todos: data };
-        newData = JSON.stringify(newData);
+        var data = list.get.todo();
 
-        api.request(newData, list.refresh, api.err);
+        api.request(data, list.refresh, api.err);
     },
     refresh: function () {
 
         var onSucces = function (response) {
             var res = JSON.parse(response);
-            console.log(res);
             //console.log(res);
             list.generate(res.value.todos, "#todo-list");
         }
@@ -96,40 +77,18 @@ var list = {
 
     },
     generate: function (todos, selector) {
-        console.log(todos);
         var root = $(selector);
         root.html("");
 
-        for(todo in todos){
-            var li = document.createElement("li");
+        console.log(todos);
+        //use jquery to build html
+        for (todo in todos) {
+            var li = $("<li/>");
+            li.append($("<input/>", { "type": "checkbox", "checked": todos[todo], "click": function () { list.update() } }));
+            li.append($("<span/>", { "class": "description", "html": todo }));
+            li.append($("<span/>", { "class": "aui-icon aui-icon-small aui-iconfont-close-dialog", "html": "&#10006", "click": function () { list.remove(todo) } }));
             root.append(li);
-
-            //rewrite dom
-            var inp = document.createElement("input");
-            inp.setAttribute("type", "checkbox");
-            console.log(inp);
-            inp.checked = todos[todo];
-            console.log(todos[todo]);
-            var txt = document.createElement("span");
-            txt.setAttribute("class", "description");
-            txt.innerHTML = todo;
-            var cl = document.createElement("span");
-            cl.setAttribute("class", "aui-icon aui-icon-small aui-iconfont-close-dialog")
-            cl.innerHTML = "&#10006";
-            cl.txt = todo;
-            cl.onclick = function(){list.remove(cl.txt)};
-            inp.onclick = function(){list.update()};
-
-            li.appendChild(inp);
-            li.appendChild(txt);
-            li.appendChild(cl);
-            console.log(li);
-
-            console.log(root);
-
         }
-
-
     },
 }
 
@@ -137,17 +96,17 @@ var list = {
 var api = {
     request: function (data, onSucces, onError) {
 
-        var issueKey = '/rest/api/2/issue/' + list.get.issue() + '/properties/todos';
+        var issueURL = '/rest/api/2/issue/' + list.get.issue() + '/properties/todos';
 
         var params = {
-            url: issueKey,
+            url: issueURL,
             contentType: "application/json",
             success: onSucces,
             error: onError,
         };
 
         if (data) {
-            params["data"] = data;
+            params["data"] = JSON.stringify(data);
             params["type"] = "PUT";
         }
         //The actual request towards atlassian
@@ -160,3 +119,5 @@ var api = {
         console.error("Error loading API" + response.status);
     }
 }
+
+list.init();
