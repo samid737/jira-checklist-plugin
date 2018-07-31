@@ -1,7 +1,7 @@
 {
     "key": "todolist",
     "name": "Jira todo plugin",
-    "description": "Simple todo list plugin",
+    "description": "Simple Todo list plugin",
     "vendor": {
         "name": "samid737",
         "url": "https://www.github.com/samid737"
