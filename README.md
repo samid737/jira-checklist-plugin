@@ -1,6 +1,7 @@
 # JIRA Cloud checklist plugin
 
 Plain and simple check/todo list plugin using [atlassian-connect-express](https://bitbucket.org/atlassian/atlassian-connect-express/src/master/) as the web service framework.
+Data persistance is achieved via [entity properties](https://developer.atlassian.com/cloud/jira/software/jira-entity-properties/).
 
 Preview:
 

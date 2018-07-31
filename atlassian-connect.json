@@ -1,7 +1,7 @@
 {
     "key": "todolist",
     "name": "Jira todo plugin",
-    "description": "Simple todo list plugin",
+    "description": "Simple Todo list plugin",
     "vendor": {
         "name": "samid737",
         "url": "https://www.github.com/samid737"
@@ -25,7 +25,7 @@
         "webPanels": [
             {
                 "key": "todolist",
-                "location": "atl.jira.view.issue.left.context",
+                "location": "atl.jira.view.issue.right.context",
                 
                 "name": {
                     "value": "Checklists"
