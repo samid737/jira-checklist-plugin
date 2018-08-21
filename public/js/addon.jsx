@@ -1,8 +1,8 @@
 /* add-on script */
 // Addon functionality
 
-// import ReactDOM from 'react-dom';
-// import React from 'react';
+import ReactDOM from 'react-dom';
+import React from 'react';
 
 var placeholder = document.createElement("li");
 
@@ -15,7 +15,6 @@ render: function()
     );
 }
 });
-
 
 var ToDoList = React.createClass({
     Remove: function(e){
