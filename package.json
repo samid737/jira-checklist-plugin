@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "atlassian-connect-express": "^3.0.2",
@@ -18,9 +19,15 @@
     "react-dom": "^16.4.2",
     "sequelize": "^4.38.0",
     "sqlite3": "^4.0.2",
-    "static-expiry": ">=0.0.5"
+    "static-expiry": ">=0.0.5",
+    "webpack": "^4.17.0"
   },
   "devDependencies": {
-    "ngrok": "^2.3.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "ngrok": "^2.3.0",
+    "webpack-cli": "^3.1.0"
   }
 }
