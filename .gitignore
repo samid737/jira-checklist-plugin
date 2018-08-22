@@ -9,11 +9,5 @@
 credentials.json
 ngrok.exe
 node_modules/
-<<<<<<< HEAD
 
 store.db
-=======
-prints/
-
-store.db
->>>>>>> 8a6bc4d4ed411469c27fa4415450a0c48bd46e5a
