@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "atlassian-connect-express": "^3.4.1",
@@ -12,13 +14,15 @@
     "cookie-parser": "^1.4.0",
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
-    "express-hbs": "*",
-    "morgan": "^1.6.1",
+    "express-hbs": "1.1.1",
+    "morgan": "^1.9.1",
     "sequelize": "^5.8.11",
     "sqlite3": "^4.0.2",
-    "static-expiry": ">=0.0.5"
+    "static-expiry": ">=0.0.5",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "ngrok": "^2.3.0"
-  }
+  },
+  "snyk": true
 }
