@@ -29,12 +29,10 @@ This will install your plugin ready for use.
 
 ## Dev notes
 
+* plugin is not actively maintained!
+
 * Atlassian-connect-express manages auto registration and deregistration of your add-on.For details, please refer to [atlassian-connect-express README](https://bitbucket.org/atlassian/atlassian-connect-express/src/master/). For manual deployment, please refer to the [getting started](https://developers.atlassian.com/cloud/jira/platform/getting-started/)
 
 * The plugin replaces the deprecated [juggling-db](https://github.com/1602/jugglingdb) in favor of [sequalize](http://docs.sequelizejs.com/) [according to recent release](https://bitbucket.org/atlassian/atlassian-connect-express/src/master/RELEASENOTES.md).
-
-* Handlebars.js will probably be replaced later on.
-
-* App under development. Contributions are welcome.
 
 * If you have any problems with usage or installation, feel free to email me.
