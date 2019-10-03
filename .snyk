@@ -12,3 +12,8 @@ patch:
         patched: '2019-07-04T05:30:30.020Z'
     - atlassian-connect-express > sequelize > lodash:
         patched: '2019-07-04T05:30:30.020Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-03T21:00:33.091Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-03T21:00:33.091Z'
