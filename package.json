@@ -8,7 +8,7 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "atlassian-connect-express": "^3.4.1",
+    "atlassian-connect-express": "^5.0.0",
     "body-parser": "^1.14.2",
     "compression": "^1.6.0",
     "cookie-parser": "^1.4.0",
