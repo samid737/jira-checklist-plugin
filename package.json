@@ -19,7 +19,7 @@
     "sequelize": "^5.8.11",
     "sqlite3": "^4.0.2",
     "static-expiry": ">=0.0.5",
-    "snyk": "^1.189.0"
+    "snyk": "^1.324.0"
   },
   "devDependencies": {
     "ngrok": "^2.3.0"
